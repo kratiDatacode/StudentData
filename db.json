@@ -1,10 +1,22 @@
 {
-  "students":[
+  "students": [
     {
-      "id":1,
-      "name":"Krati",
-      "place":"ujjain",
-      "phone":"9826023912"
+      "id": 1,
+      "name": "Krati",
+      "place": "ujjain",
+      "phone": "9826023912"
+    },
+    {
+      "id": "12",
+      "name": "Krati porwal",
+      "place": "Indore",
+      "phone": "7987525391"
+    },
+    {
+      "id": "3",
+      "name": "Huzefa burhani",
+      "place": "Indore",
+      "phone": "7987525391"
     }
   ]
 }
