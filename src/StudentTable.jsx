@@ -1,10 +1,11 @@
+import {Link} from "react-router"
 const StudentTable = () => {
   
   return(
     <>
      <h2>Student Records</h2>
      <div className="table-conatiner">
-      <a href="#" className="btn btn-add">Add new Student</a>
+      <Link to="/student/create" className="btn btn-add">Add new Student</Link>
       <table>
         <thead>
           <tr>
