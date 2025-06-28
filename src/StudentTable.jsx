@@ -7,7 +7,7 @@ const StudentTable = () => {
   //Fetching Students on Mount
   useEffect(() => {
     fetch("http://localhost:8000/students")
-      .then((res) => res.json()) //Promises
+      .then((res) => res.json()) //PromisesChain
       .then((data) => {
         setStudents(data);
       })
