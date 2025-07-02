@@ -2,7 +2,7 @@ const EditStudent = () => {
   
   return(
     <>
-     <h2>Editing Student Details</h2>
+     <h2>Editing Student Details now</h2>
     </>
   )
 }
