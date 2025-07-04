@@ -3,6 +3,9 @@ import { Link } from "react-router";
 
 const StudentTable = () => {
   const [students, setStudents] = useState("");
+  const DisplayDetails=(id)=>{
+    console.log(id);
+  }
 
   //Fetching Students on Mount
   useEffect(() => {
@@ -42,9 +45,9 @@ const StudentTable = () => {
                   <td>{item.place}</td>
                   <td>{item.phone}</td>
                   <td>
-                    <a href="" className="btn btn-info">
+                    <button onClick={()=>DisplayDetails(item.id)} className="btn btn-info">
                       View
-                    </a>
+                    </button>
                     <a href="" className="btn btn-primary">
                       Edit
                     </a>

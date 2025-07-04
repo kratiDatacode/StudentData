@@ -6,6 +6,7 @@ const CreateStudent = () => {
   const [name, setName] = useState("");
   const [place, setPlace] = useState("");
   const [phone, setPhone] = useState("");
+  const[validation,setValidation]=useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -39,8 +40,12 @@ const CreateStudent = () => {
             value={id}
             required
             onChange={(e) => setId(e.target.value)}
+            onMouseDown={()=>setValidation(true)}
           />
+           <br/>
+          {id.length===0 && validation && <span className="errorMsg">Please Enter your id</span>}
           <br />
+          <br/>
           <label htmlFor="name">Name:</label>
           <input
             type="text"
@@ -49,8 +54,12 @@ const CreateStudent = () => {
             value={name}
             required
             onChange={(e) => setName(e.target.value)}
+             onMouseDown={()=>setValidation(true)}
           />
+          <br/>
+          {name.length===0 && validation && <span className="errorMsg">Please Enter your name</span>}
           <br />
+           <br/>
           <label htmlFor="place">Place:</label>
           <input
             type="text"
@@ -59,8 +68,12 @@ const CreateStudent = () => {
             value={place}
             required
             onChange={(e) => setPlace(e.target.value)}
+             onMouseDown={()=>setValidation(true)}
           />
+           <br/>
+          {place.length===0 && validation && <span className="errorMsg">Please Enter your place</span>}
           <br />
+           <br/>
           <label htmlFor="phone">Phone:</label>
           <input
             type="text"
@@ -69,8 +82,12 @@ const CreateStudent = () => {
             value={phone}
             required
             onChange={(e) => setPhone(e.target.value)}
+             onMouseDown={()=>setValidation(true)}
           />
+           <br/>
+          {phone.length===0 && validation && <span className="errorMsg">Please Enter your phone</span>}
           <br />
+           <br/>
           <div>
             <button className="btn btn-save">Save</button>
             <Link to="/" className="btn btn-back">
