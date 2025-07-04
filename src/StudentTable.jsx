@@ -7,7 +7,9 @@ const StudentTable = () => {
   const DisplayDetails=(id)=>{
     navigate("/student/view/"+id);
   }
-
+  const EditDetails=(id)=>{
+    navigate("/student/edit/"+id);
+  }
   //Fetching Students on Mount
   useEffect(() => {
     fetch("http://localhost:8000/students")
@@ -49,9 +51,9 @@ const StudentTable = () => {
                     <button onClick={()=>DisplayDetails(item.id)} className="btn btn-info">
                       View
                     </button>
-                    <a href="" className="btn btn-primary">
+                    <button onClick={()=>EditDetails(item.id)} className="btn btn-primary">
                       Edit
-                    </a>
+                    </button>
                     <a href="" className="btn btn-danger">
                       Delete
                     </a>
