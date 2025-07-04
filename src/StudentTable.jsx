@@ -10,6 +10,19 @@ const StudentTable = () => {
   const EditDetails=(id)=>{
     navigate("/student/edit/"+id);
   }
+
+  const RemoveDetails=(id)=>{
+    if(window.confirm("Are you sure you want to delete?")){
+        fetch("http://localhost:8000/students/"+id, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        alert("Removed Student data successfully");
+        window.location.reload();
+      })
+      .catch((err) => console.log(err.message));
+    }
+  }
   //Fetching Students on Mount
   useEffect(() => {
     fetch("http://localhost:8000/students")
@@ -32,7 +45,7 @@ const StudentTable = () => {
         <table>
           <thead>
             <tr>
-              <th>Id</th>
+              <th>Sl no.</th>
               <th>Name</th>
               <th>Place</th>
               <th>Phone</th>
@@ -41,9 +54,9 @@ const StudentTable = () => {
           </thead>
           <tbody>
             {students &&
-              students.map((item) => (
+              students.map((item,index) => (
                 <tr key={item.id}>
-                  <td>{item.id}</td>
+                  <td>{index+1}</td>
                   <td>{item.name}</td>
                   <td>{item.place}</td>
                   <td>{item.phone}</td>
@@ -54,9 +67,9 @@ const StudentTable = () => {
                     <button onClick={()=>EditDetails(item.id)} className="btn btn-primary">
                       Edit
                     </button>
-                    <a href="" className="btn btn-danger">
+                    <button onClick={()=>RemoveDetails(item.id)} className="btn btn-danger">
                       Delete
-                    </a>
+                    </button>
                   </td>
                 </tr>
               ))}
