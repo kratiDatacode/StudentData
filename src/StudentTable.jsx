@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const StudentTable = () => {
   const [students, setStudents] = useState("");
+  const navigate=useNavigate();
   const DisplayDetails=(id)=>{
-    console.log(id);
+    navigate("/student/view/"+id);
   }
 
   //Fetching Students on Mount
@@ -39,7 +40,7 @@ const StudentTable = () => {
           <tbody>
             {students &&
               students.map((item) => (
-                <tr>
+                <tr key={item.id}>
                   <td>{item.id}</td>
                   <td>{item.name}</td>
                   <td>{item.place}</td>
